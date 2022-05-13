@@ -3,12 +3,12 @@ const router = express.Router();
 const axios = require("axios");
 const app= express()
 
-const fetchArtists = async (page) => {
+const fetchArtists = async (artist) => {
   try {
     let result;
     await axios
       .get(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=30d82bc1657cfc2bb5cf2b2af64aac2c&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=30d82bc1657cfc2bb5cf2b2af64aac2c&format=json`
       )
       .then((response) => {
         result = response.data.results;
