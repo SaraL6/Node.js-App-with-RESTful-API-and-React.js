@@ -11,13 +11,14 @@ const backupfetchArtists = async () => {
         `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=30d82bc1657cfc2bb5cf2b2af64aac2c&format=json`
       )
       .then((response) => {
-        result = response.data.artists.artist.map((artist) => {
+        artists = response.data.artists.artist.map((artist) => {
           return artist.name;
         });
+        result = artists.slice(0, 5);
         const sampleObject = { result };
 
         fs.writeFile(
-          "./object.json",
+          "../client/src/backupJson/artists.json",
           JSON.stringify(sampleObject, null, 4),
           (err) => {
             if (err) {
