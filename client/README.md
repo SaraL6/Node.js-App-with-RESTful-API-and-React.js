@@ -34,8 +34,7 @@ If the name isn't available, it returns the top artists of last.fm.
 
 - [React js](https://reactjs.org/)
 - [Node js](https://nodejs.org/)
-
-
+- [express](https://expressjs.com/)
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -48,16 +47,22 @@ NOTICE :
 
 ### Prerequisites
 
+- [Last.fm](https://www.last.fm/join/) account
+
 ### Installation
 
 - Clone the repo and cd into the project's folder
 
   ```sh
-  git clone https://github.com/AdamOB1290/amazon-clone.git
+  git clone https://github.com/SaraL6/Node.js-App-with-RESTful-API-and-React.js.git
   ```
 
   ```sh
-  cd amazon-clone
+  cd Node.js-App-with-RESTful-API-and-React.js
+  ```
+
+  ```sh
+  cd client
   ```
 
 - In your terminal, execute :
@@ -66,103 +71,49 @@ NOTICE :
   npm install
   ```
 
-- Cd to /functions and execure in your terminal :
+- Cd back into the project's folder and execute in your terminal :
 
   ```sh
-  cd functions
+  cd server
+  ```
+
+  -create an .env file in the root of the server folder and insert your API key under the variable LASTFM_API_KEY
+
+  ```sh
+  LASTFM_API_KEY = ""
   ```
 
   ```sh
-  npm install
+  npm install -g nodemon
   ```
 
+  ```sh
+  npm i express
+  ```
+
+```sh
+npm run dev
+```
+
+-Cd back into client
+
+```sh
+npm start
+```
 
 <!-- CONTACT -->
 
 ## Contact
 
-Sara LACHGAR - [LinkedIn](https://www.linkedin.com/in/adam-louali/) - lachgarsara0@gmail.com
+Sara LACHGAR - [LinkedIn](https://www.linkedin.com/in/sara-lachgar/) - lachgarsara0@gmail.com
 
-Project Link: [https://github.com/AdamOB1290/amazon-clone](https://github.com/AdamOB1290/amazon-clone)
+Project Link: [https://github.com/SaraL6/Node.js-App-with-RESTful-API-and-React.js](https://github.com/SaraL6/Node.js-App-with-RESTful-API-and-React.js)
 
 <!-- ACKNOWLEDGEMENTS -->
 
 ## Acknowledgements
 
-- [Stripe](https://stripe.com/) account
-- [Tailwind](https://tailwindcss.com/)
+- [Bootstrap](https://getbootstrap.com//)
 - [Material-ui](https://material-ui.com/)
-- [Slick Carousel](https://kenwheeler.github.io/slick/)
-- [Unsplash](https://unsplash.com/developers)
-- [Faker](https://github.com/fzaninotto/Faker)
-
-<!-- # Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
+- [nodemon](https://www.npmjs.com/package/nodemon)
+- [express](https://expressjs.com/)

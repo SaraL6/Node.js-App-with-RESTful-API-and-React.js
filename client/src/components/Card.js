@@ -46,12 +46,10 @@ function ImgMediaCard({ backendData, backupArtists }) {
       {backupArtists !== "undefined" ? (
         backupArtists?.map((artists) => {
           return artists.map((artist, i) => {
-
             return (
-              <div>
+              <div key={i}>
                 <Card
                   sx={{ maxHeight: 350, height: 350, margin: 2, width: 350 }}
-                  key={i}
                 >
                   <CardMedia
                     component="img"

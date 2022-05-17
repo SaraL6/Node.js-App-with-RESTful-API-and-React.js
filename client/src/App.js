@@ -141,7 +141,9 @@ function App() {
                 </CSVLink>
               </button>
             </div>
-            {backupArtistsData && backupArtistsData.length > 0 ? (
+            {backupArtistsData &&
+            backendData.length === 0 &&
+            backupArtistsData.length > 0 ? (
               <h2 className="backupText">
                 Sorry, no matches for your artist. Here's our top Artists:
               </h2>
