@@ -1,4 +1,4 @@
-# A Node.js RESTful API App with React.js 
+# A Node.js RESTful API App with React.js
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -22,173 +22,79 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
-For this project, I made a Node.js Application with RESTful API and React.js.
-It is a Search engine for searching for artists with the last.fm API.
-When you search for an artist by name, it returs all artist matches sorted by relevance.
+For this project, I made a Node.js REST API application with React.js,which searches for artists with the last.fm API.
+When you search for an artist by name, it returns all artist matches sorted by relevance.
 If the name isn't available, it returns the top artists of last.fm.
-
 
 ### Built With
 
-* [React js](https://reactjs.org/)
-* [Node js](https://nodejs.org/)
+- [React js](https://reactjs.org/)
+- [Node js](https://nodejs.org/)
 
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 In order to make the project run on your computer, follow these steps :
 
-NOTICE : 
-* You can global search for " ****REMOVED**** " to easily locate all the information that needs to be replaced in the project.
+NOTICE :
 
+- You can global search for " \***\*REMOVED\*\*** " to easily locate all the information that needs to be replaced in the project.
 
 ### Prerequisites
 
-
-
-
-
 ### Installation
 
-* Clone the repo and cd into the project's folder
+- Clone the repo and cd into the project's folder
 
-   ```sh
-   git clone https://github.com/AdamOB1290/amazon-clone.git
-   ```
-   ```sh
-   cd amazon-clone
-   ```
+  ```sh
+  git clone https://github.com/AdamOB1290/amazon-clone.git
+  ```
 
-* In your terminal, execute :
+  ```sh
+  cd amazon-clone
+  ```
 
-   ```sh
-   npm install
-   ```
+- In your terminal, execute :
 
-* Cd to /functions and execure in your terminal :
+  ```sh
+  npm install
+  ```
 
-   ```sh
-   cd functions
-   ```
-   ```sh
-   npm install
-   ```
+- Cd to /functions and execure in your terminal :
 
-* In [Unsplash](https://unsplash.com/developers), register your app and copy the access key
+  ```sh
+  cd functions
+  ```
 
-* Paste the key in src/Seeder.js line 8, like so :
+  ```sh
+  npm install
+  ```
 
-    ```sh
-    accessKey: "access key goes here",
-    ```
-    
-* In [Stripe](https://stripe.com/), copy paste your Publishable key in src/App.js at line 19 :
-
-    ```sh
-    const promise = loadStripe("publishable key goes here");
-    ```
-
-* Copy paste your stripe Secret key in functions/index.js at line 4 :
-
-    ```sh
-    const stripe = require("stripe")("secret key goes here");
-    ```
-
-* In [Firebase](https://firebase.google.com/), go to project settings and copy paste your project ID in the file .firebaserc :
-
-    ```sh
-    {
-     "projects": {
-     	"default": "project ID goes here"
-     }
-    }
-    ```
-* In project settings, copy the CDN of the Firebase SDK snippet and paste it in src/firebase.js :
-
-    ```sh
-    	const firebaseConfig = {
-  		apiKey: "apiKey goes here",
-  		authDomain: "authDomain goes here",
-  		databaseURL: "hdatabaseURL goes here",
-  		projectId: "projectId goes here",
-  		storageBucket: "storageBucket goes here",
-  		messagingSenderId: "messagingSenderId goes here",
-  		appId: "appId goes here",
-  		measurementId: "measurementId goes here"
-	};
-    ```	
-
-* In your terminal, cd back to amazon-clone and execute the following : 
-
-    ```sh
-    	firebase emulators:start
-    ```	
-
-* Copy the api url returned by the previous command and paste it in src/axios.js at line 5 :
-
-    ```sh
-    	+  functions[api]: http function initialized (url to copy from the terminal).
-    ```	
-
-    ```sh
-    	const instance = axios.create({
-  		// THE API (cloud function) URL
-  		baseURL: "the api url goes here",
-	});
-    ```	
-
-* (Optional) To seed the database with products, uncomment the Seeder() function in src/App.js at line 28.
- It takes about 10 seconds to work (don't forget to comment it back once the database is populated).
 
 <!-- CONTACT -->
+
 ## Contact
 
-Adam LOUALI - [LinkedIn](https://www.linkedin.com/in/adam-louali/) - loualiadam0@gmail.com
+Sara LACHGAR - [LinkedIn](https://www.linkedin.com/in/adam-louali/) - lachgarsara0@gmail.com
 
 Project Link: [https://github.com/AdamOB1290/amazon-clone](https://github.com/AdamOB1290/amazon-clone)
 
-
-
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
-* [Stripe](https://stripe.com/) account
-* [Tailwind](https://tailwindcss.com/)
-* [Material-ui](https://material-ui.com/)
-* [Slick Carousel](https://kenwheeler.github.io/slick/)
-* [Unsplash](https://unsplash.com/developers)
-* [Faker](https://github.com/fzaninotto/Faker)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [Stripe](https://stripe.com/) account
+- [Tailwind](https://tailwindcss.com/)
+- [Material-ui](https://material-ui.com/)
+- [Slick Carousel](https://kenwheeler.github.io/slick/)
+- [Unsplash](https://unsplash.com/developers)
+- [Faker](https://github.com/fzaninotto/Faker)
 
 <!-- # Getting Started with Create React App
 

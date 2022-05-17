@@ -2,13 +2,14 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const fs = require("fs");
-
+const config = require("dotenv").config();
+const API_Key = process.env.LASTFM_API_KEY;
 const backupfetchArtists = async () => {
   try {
     let result;
     await axios
       .get(
-        `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=30d82bc1657cfc2bb5cf2b2af64aac2c&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=chart.gettopartists&api_key=${API_Key}&format=json`
       )
       .then((response) => {
         artists = response.data.artists.artist.map((artist) => {
@@ -43,7 +44,7 @@ const fetchArtists = async (searchValue) => {
     let result;
     await axios
       .get(
-        `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${searchValue}&api_key=30d82bc1657cfc2bb5cf2b2af64aac2c&format=json`
+        `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${searchValue}&api_key=${API_Key}&format=json`
       )
       .then((response) => {
         result = response.data.results;
