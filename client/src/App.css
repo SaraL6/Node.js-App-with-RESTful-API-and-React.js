@@ -93,6 +93,10 @@ a[target="_blank"]::after {
   background-color: #e35865;
   padding: 10px;
 }
+.backupText{
+  color: #e35865;
+  margin-bottom: 50px;
+}
 #searchBox {
   padding-top: 40vh;
 }

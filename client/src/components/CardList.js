@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 
-function CardList({backupArtists, backendData}) {
+function CardList({ backupArtists, backendData }) {
 
   return (
     <div className="result">
