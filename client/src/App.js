@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./App.css";
 import { CSVLink } from "react-csv";
 import JsonData from "./backupJson/artists.json";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Home from "./components/Home";
 import CardList from "./components/CardList";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     { label: "mbid", key: "mbid" },
     { label: "url", key: "url" },
     { label: "image_small", key: "image_small" },
+    { label: "image", key: "image" },
   ];
   let datax = [];
   const fetchBackupArtists = () => {
@@ -35,10 +36,7 @@ function App() {
               .then((response) =>
                 response.json().then((data) => {
                   let artist = data?.data?.artistmatches?.artist;
-                  setBackupArtistsData((backupArtists) => [
-                    ...backupArtists,
-                    artist,
-                  ]);
+                  setBackupArtistsData((oldArray) => [...oldArray, artist]);
                 })
               )
               .catch((error) => {
@@ -55,7 +53,8 @@ function App() {
   const handleChange = (event) => {
     setSearchValue(event.target.value);
   };
-  const handleSearch = () => {
+  const handleSearch = (event) => {
+    event.preventDefault();
     fetch(`/api/${searchValue}`)
       .then((response) =>
         response.json().then((data) => {
@@ -80,6 +79,7 @@ function App() {
           mbid: item?.mbid,
           url: item?.url,
           image_small: item?.image[0]["#text"],
+          image: item?.image[3]["#text"],
         });
       });
     } else if (backendData?.length === 0) {
@@ -89,44 +89,65 @@ function App() {
             name: artist?.name,
             mbid: artist?.mbid,
             url: artist?.url,
-            image_small: artist.image[0]["#text"],
+            image_small: artist?.image[0]["#text"],
+            image: artist?.image[3]["#text"],
           });
         });
       });
     }
     setCsvData(datax);
-  }, [backendData]);
+  }, [backendData, backupArtistsData]);
 
   return (
     <div>
-      <Home></Home>
       <div>
-        <input
-          name="searchValue"
-          onChange={handleChange}
-          placeholder="Search Artists"
-        />
-      </div>
-      <button className="SearchBar-submit" onClick={handleSearch}>
-        Let's Go
-      </button>
-      <CSVLink data={csvData} headers={headers}>
-        Download me
-      </CSVLink>
+        {" "}
+        <header className="container-fluid">
+          <div className="container text-center" id="searchBox">
+            <h1>Search for an artist</h1>
+            <div className="form col-xs-12">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSearch(e);
+                }}
+              >
+                <input
+                  name="searchValue"
+                  className="col-xs-9"
+                  id="searchBar"
+                  type="text"
+                  onChange={handleChange}
+                  placeholder="Search Artists"
+                />
+                <button className="SearchBar-submit" type="submit">
+                  <span
+                    className="glyphicon glyphicon-search col-xs-1"
+                    data-toggle="tooltip"
+                    title="Search"
+                  ></span>
+                </button>
+              </form>
+            </div>
+            <div className="CSV">
+              <button type="button" className="CSV_dll_btn">
+                {" "}
+                <CSVLink
+                  data={csvData}
+                  headers={headers}
+                  className="text-decoration-none"
+                >
+                  <h2 className="dll_text"> Download CSV</h2>
+                </CSVLink>
+              </button>
+            </div>
 
-      <div>
-        {backendData !== "undefined" ? (
-          backendData?.map((artist, i) => <p key={i}>{artist?.name}</p>)
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-      <div>
-        {backupArtists !== "undefined" ? (
-          backupArtists?.map((artist, i) => <p key={i}>{artist}</p>)
-        ) : (
-          <p>Loading...</p>
-        )}
+            <CardList
+              backendData={backendData}
+              backupArtists={backupArtistsData}
+            ></CardList>
+          </div>
+        </header>
       </div>
     </div>
   );

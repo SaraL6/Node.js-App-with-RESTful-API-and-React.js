@@ -4,7 +4,6 @@ import "./Home.css";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
-
   return (
     <div>
       <header className="container-fluid">
@@ -12,30 +11,17 @@ function Home() {
           <h1>Search for an artist</h1>
           <div className="form col-xs-12">
             <input
+              name="searchValue"
               className="col-xs-9"
               id="searchBar"
               type="text"
-              placeholder="search"
+              placeholder="Search Artists"
             />
             <span
               className="glyphicon glyphicon-search col-xs-1"
               data-toggle="tooltip"
               title="Search"
             ></span>
-            <span className="glyphicon bar col-xs-1" id="submit">
-              <b>|</b>
-            </span>
-            <a
-              href="https://en.wikipedia.org/wiki/Special:Random"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span
-                className="glyphicon glyphicon-random col-xs-1"
-                data-toggle="tooltip"
-                title="Random topic"
-              ></span>
-            </a>
           </div>
         </div>
       </header>

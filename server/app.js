@@ -62,7 +62,6 @@ app.get("/api/backup", async (req, res, next) => {
     const { page } = req.query;
 
     const data = await backupfetchArtists();
-    console.log("data", data);
     return res.status(200).json({
       status: 200,
       data,
@@ -77,7 +76,6 @@ app.get("/api/:searchValue", async (req, res, next) => {
     const { page } = req.query;
 
     const data = await fetchArtists(req.params.searchValue);
-    console.log("artist", req.params.searchValue);
     return res.status(200).json({
       status: 200,
       data,
