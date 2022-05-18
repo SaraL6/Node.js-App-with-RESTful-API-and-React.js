@@ -77,29 +77,34 @@ NOTICE :
   cd server
   ```
 
-  -create an .env file in the root of the server folder and insert your API key under the variable LASTFM_API_KEY
+  -create an .env file in the root of the server folder and insert your Last.fm API key under the variable LASTFM_API_KEY
 
   ```sh
   LASTFM_API_KEY = ""
   ```
 
+  - Install nodemon
+
   ```sh
   npm install -g nodemon
   ```
 
+  -Install  express.js
+
   ```sh
   npm i express
   ```
+ -Start the server:
 
-```sh
-npm run dev
-```
+  ```sh
+  npm run dev
+  ```
 
--Cd back into client
+  -Cd back into client
 
-```sh
-npm start
-```
+  ```sh
+  npm start
+  ```
 
 <!-- CONTACT -->
 
