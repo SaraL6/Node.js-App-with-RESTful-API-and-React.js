@@ -74,6 +74,10 @@ NOTICE :
 - Cd back into the project's folder and execute in your terminal :
 
   ```sh
+  cd ..
+  ```
+  
+  ```sh
   cd server
   ```
 

@@ -19,7 +19,11 @@ function ImgMediaCard({ backendData, backupArtists }) {
               component="img"
               alt="green iguana"
               height="220"
-              image={artist?.image[4]["#text"]}
+              image={
+                artist?.image[4]["#text"].length === 0
+                  ? "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+                  : artist?.image[4]["#text"]
+              }
             />
             <CardContent>
               <h2 variant="h2" component="div">
@@ -55,7 +59,11 @@ function ImgMediaCard({ backendData, backupArtists }) {
                     component="img"
                     alt="green iguana"
                     height="220"
-                    image={artist?.image[4]["#text"]}
+                    image={
+                      artist?.image[4]["#text"].length === 0
+                        ? "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"
+                        : artist?.image[4]["#text"]
+                    }
                   />
                   <CardContent>
                     <h2 variant="h2" component="div">

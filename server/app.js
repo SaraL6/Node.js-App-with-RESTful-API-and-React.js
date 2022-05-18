@@ -4,7 +4,7 @@ const axios = require("axios");
 const fs = require("fs");
 const config = require("dotenv").config();
 const API_Key = process.env.LASTFM_API_KEY;
-const backupfetchArtists = async () => {
+const backupFetchArtists = async () => {
   try {
     let result;
     await axios
@@ -62,7 +62,7 @@ app.get("/api/backup", async (req, res, next) => {
   try {
     const { page } = req.query;
 
-    const data = await backupfetchArtists();
+    const data = await backupFetchArtists();
     return res.status(200).json({
       status: 200,
       data,
